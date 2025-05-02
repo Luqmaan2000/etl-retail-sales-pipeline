@@ -1,10 +1,8 @@
+# ------------- Extract Data --------------
 # %%
+
 import pandas as pd
 import os
-
-
-
-# Load the correct CSV path
 
 csv_path = os.path.join("superstore-dataset-final", "Sample - Superstore.csv")
 df = pd.read_csv(csv_path, encoding='latin1')
@@ -69,7 +67,7 @@ top_subcats = df.groupby('sub-category')['sales'].sum().sort_values(ascending = 
 print('\n Top Sub Categories by Sales:')
 print(top_subcats)
 
-# ----------- Load Phase ------------------
+# ----------- Load Data ------------------
 # %%
 import sqlite3
 
@@ -88,4 +86,4 @@ order by total_sales Desc
 """
 result = pd.read_sql(query,conn)
 print(result)
-# %%
+
